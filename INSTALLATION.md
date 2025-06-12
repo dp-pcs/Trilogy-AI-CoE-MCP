@@ -69,7 +69,54 @@ npm test
 
 You should see output indicating the server started successfully and can fetch articles.
 
-## Step 5: Configure Your AI Assistant
+## Step 5: Inspect and Debug with the MCP Inspector
+
+The MCP Inspector is a standalone developer tool for testing and debugging your MCP server. It provides a web-based interface that allows you to interactively inspect the tools your server exposes, test their outputs, and verify schemas and responses.
+
+### How to Use the Inspector
+
+1. **Make sure your server is built**:
+   ```bash
+   npm run build
+   ```
+
+2. **Open a terminal window** in the project root directory.
+
+3. **Start the Inspector** using npx (no installation required):
+   ```bash
+   npx @modelcontextprotocol/inspector node dist/index.js
+   ```
+
+4. **Open the Inspector web interface**:
+   - The Inspector will start a local web server (usually on port 5173)
+   - Open your browser and go to: **http://localhost:5173**
+   - You should see the MCP Inspector interface
+
+5. **Use the Inspector interface** to:
+   - **Resources tab**: Browse available resources (if any)
+   - **Tools tab**: View and test all available tools:
+     - `list_articles` - Get articles from the Substack feed
+     - `list_authors` - Get all authors who have written articles
+     - `list_topics` - Get available topics/categories
+     - `read_article` - Read full content of a specific article
+   - **Prompts tab**: View available prompt templates (if any)
+   - **Notifications pane**: See server logs and messages
+
+6. **Test your tools**:
+   - Click on any tool to see its schema and description
+   - Fill in parameters (or leave empty for tools that don't require them)
+   - Click "Call Tool" to test the functionality
+   - Review the JSON responses to verify everything works correctly
+
+### What to Look For
+- All four tools should be listed in the Tools tab
+- Tool schemas should match the expected parameters
+- Responses should be well-formed JSON with the expected data structure
+- Error handling should work correctly (try invalid inputs)
+
+**For more advanced usage and options, see the [official MCP Inspector documentation](https://modelcontextprotocol.io/docs/tools/inspector).**
+
+## Step 6: Configure Your AI Assistant
 
 ### For Claude Desktop
 
@@ -121,7 +168,7 @@ cd
 2. **Access MCP Settings** (check documentation for your version)
 3. **Add the server configuration** using the same format
 
-## Step 6: Restart and Test
+## Step 7: Restart and Test
 
 1. **Restart your AI assistant** completely (quit and reopen)
 2. **Test the integration** by asking:
@@ -130,33 +177,7 @@ cd
    - "What topics are covered?"
    - "Read the article about AI strategy"
 
-## Step 7: Test the Inspector Tool
-
-The MCP Inspector is a valuable tool for debugging and verifying your MCP server's capabilities and responses. It allows you to interactively inspect the tools your server exposes and test their outputs.
-
-### How to Use the Inspector
-
-1. **Start your MCP server** (locally or remotely, as described above).
-2. **Open the Inspector** in your AI assistant (if supported):
-   - In **Claude Desktop**: Go to the Developer tab and look for "Inspector" or "MCP Inspector".
-   - In **Cursor**: Open the MCP extension and select "Inspector".
-   - For other clients, refer to their documentation for MCP tool inspection.
-3. **Connect to your running MCP server** using the Inspector interface.
-4. **Browse the available tools** (list_articles, list_authors, list_topics, read_article) and their schemas.
-5. **Send test requests** to each tool and verify the responses:
-   - Try listing articles, authors, and topics.
-   - Read a specific article and check the content.
-   - Confirm that error handling works (e.g., request a non-existent article).
-
-### What to Look For
-- All four tools should be listed and selectable.
-- Input schemas should match the documentation.
-- Responses should be well-formed and match expected data.
-- Errors should be clear and helpful if you provide invalid input.
-
-**Tip:** The Inspector is especially useful for troubleshooting and for learning how to call your MCP server programmatically from other clients.
-
-## Troubleshooting
+## Step 8: Troubleshooting
 
 ### Common Issues
 
