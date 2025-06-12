@@ -67,4 +67,8 @@ jspm_packages/
 *.tgz
 
 # Yarn Integrity file
-.yarn-integrity 
+.yarn-integrity
+
+# Demo and test scripts (not needed in production template)
+DEMO_SCRIPT.md
+test-server.js 

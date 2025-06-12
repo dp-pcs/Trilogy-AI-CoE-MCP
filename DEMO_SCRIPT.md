@@ -194,6 +194,24 @@ npm run test-server
 **[Speak]**
 "As you can see, Claude can now access our Substack feed through the MCP server, providing seamless integration with our content."
 
+## Part 8.5: Testing with the MCP Inspector (1 minute)
+
+**[Screen: Claude Desktop or Cursor Inspector interface]**
+
+### Step 11.5: Use the Inspector Tool
+
+"Before we wrap up, let's use the built-in Inspector to verify our MCP server's tools and responses."
+
+1. Open the Inspector in your AI assistant (Developer tab in Claude Desktop, MCP extension in Cursor, etc.).
+2. Connect to your running MCP server.
+3. Browse the list of available tools (list_articles, list_authors, list_topics, read_article).
+4. Select a tool and fill in the input fields (e.g., limit for list_articles).
+5. Send a request and observe the response.
+6. Try intentionally invalid input to see error handling in action.
+
+**[Speak]**
+"The Inspector is a great way to interactively test and debug your MCP server. You can see exactly what tools are available, what input they expect, and what output they produce. This is especially useful for troubleshooting and for learning how to call your MCP server from other clients."
+
 ## Part 9: Universal Compatibility (1 minute)
 
 **[Screen: Cursor/Windsurf settings]**

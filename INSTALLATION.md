@@ -130,6 +130,32 @@ cd
    - "What topics are covered?"
    - "Read the article about AI strategy"
 
+## Step 7: Test the Inspector Tool
+
+The MCP Inspector is a valuable tool for debugging and verifying your MCP server's capabilities and responses. It allows you to interactively inspect the tools your server exposes and test their outputs.
+
+### How to Use the Inspector
+
+1. **Start your MCP server** (locally or remotely, as described above).
+2. **Open the Inspector** in your AI assistant (if supported):
+   - In **Claude Desktop**: Go to the Developer tab and look for "Inspector" or "MCP Inspector".
+   - In **Cursor**: Open the MCP extension and select "Inspector".
+   - For other clients, refer to their documentation for MCP tool inspection.
+3. **Connect to your running MCP server** using the Inspector interface.
+4. **Browse the available tools** (list_articles, list_authors, list_topics, read_article) and their schemas.
+5. **Send test requests** to each tool and verify the responses:
+   - Try listing articles, authors, and topics.
+   - Read a specific article and check the content.
+   - Confirm that error handling works (e.g., request a non-existent article).
+
+### What to Look For
+- All four tools should be listed and selectable.
+- Input schemas should match the documentation.
+- Responses should be well-formed and match expected data.
+- Errors should be clear and helpful if you provide invalid input.
+
+**Tip:** The Inspector is especially useful for troubleshooting and for learning how to call your MCP server programmatically from other clients.
+
 ## Troubleshooting
 
 ### Common Issues
